@@ -12,20 +12,21 @@ def index(a, x):
 
 def part_1():
 	with open('input', 'r') as frequencies:
-		freq_list 	=  [int(freq.replace('\n', '')) for freq in frequencies.readlines()]
-		final_freq 	= 0
+		freq_list  = [int(freq.replace('\n', '')) for freq in frequencies.readlines()]
+		final_freq = 0
 		for freq in freq_list:
 			final_freq += freq
 		print "[+] Final frequency is: {}".format(final_freq)
 
 def part_2():
 	freq_list = []
-	freq_dup 	= 0
+	freq_dup  = 0
 	freq_calibrator = []
 	
 	with open('input', 'r') as frequencies:
-		freq_list =  [int(freq.replace('\n', '')) for freq in frequencies.readlines()]
-		pool 			= cycle(freq_list)
+		freq_list = [int(freq.replace('\n', '')) for freq in frequencies.readlines()]
+		pool = cycle(freq_list)
+		
 		for freq in pool:
 			freq_dup += freq
 			if index(freq_calibrator, freq_dup) == False:
